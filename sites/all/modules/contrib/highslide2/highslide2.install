@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for Highslide.
+ */
+
+
+/**
+ * Implementation of hook_install().
+*/ 
+function highslide2_install() {
+  //install the default formatter
+	$formatter = _highslide2_default_formater();
+	$formatter['name'] = 'default';
+  $formatters[$formatter['name']] = $formatter;
+  variable_set('highslide2_formatters', $formatters);
+  drupal_set_message(st("The Highslide2 settings are available under !link", 
+    array( '!link' => l('Administer > Configuration > Media > Highslide',  'admin/config/media/highslide' ))
+  ));  
+} 
+ 
+/**
+ * Implementation of hook_uninstall().
+ */
+function highslide2_uninstall() {
+  // Delete the variable we created.
+	variable_del('highslide2_formatters');
+  variable_del('highslide2_options');
+}

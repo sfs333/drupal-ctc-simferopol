@@ -1,0 +1,26 @@
+﻿// Romanian language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Încarcă...',
+	loadingTitle: 'Apasă pentru a anula',
+	focusTitle: 'Apasă pentru a aduce în faţă',
+	fullExpandTitle: 'Măreşte 100%',
+	creditsText: 'Powerd by <i>Highslide JS</i>',
+	creditsTitle: 'Mergi la pagina Highslide',
+	previousText: 'Înapoi',
+	nextText: 'Înainte',
+	moveText: 'Mută',
+	closeText: 'Închide',
+	closeTitle: 'Închide (esc)',
+	resizeTitle: 'Redimensionează',
+	playText: 'Porneşte',
+	playTitle: 'Porneşte prezentarea (bara de spațiu)',
+	pauseText: 'Opreşte',
+	pauseTitle: 'Opreşte prezentarea (bara de spațiu)',
+	previousTitle: 'Înapoi (săgeata din stânga)',
+	nextTitle: 'Înainte (săgeata din dreapta)',
+	moveTitle: 'Mută',
+	fullExpandText: 'Marimea 100%',
+	number: 'Imaginea %1 din %2',
+	restoreTitle: 'Apasă pentru a închide imaginea, ţine apăsat şi mişcă pentru a muta. Foloseşte săgeţile pentru înainte şi înapoi.'
+};

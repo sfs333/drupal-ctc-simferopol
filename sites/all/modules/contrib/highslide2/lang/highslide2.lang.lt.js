@@ -1,0 +1,26 @@
+﻿// Lithuanian language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Kraunama...',
+	loadingTitle: 'Atšaukti krovimą',
+	focusTitle: 'Rodyti viršuje',
+	fullExpandTitle: 'Išplėsti iki pilno dydžio',
+	creditsText: 'Pagaminta <i>Highslide JS</i>',
+	creditsTitle: 'Eiti į Highslide JS namų puslapį',
+	previousText: 'Buvusi',
+	nextText: 'Sekanti',
+	moveText: 'Patraukti',
+	closeText: 'Uždaryti',
+	closeTitle: 'Uždaryti (esc klavišas)',
+	resizeTitle: 'Pakeisti dydį',
+	playText: 'Rodyti',
+	playTitle: 'Rodyti slideshow (spacebar klavišas)',
+	pauseText: 'Pristabdyti',
+	pauseTitle: 'Pristabdyti slideshow (spacebar klavišas)',
+	previousTitle: 'Buvusi (klavišas kairėn)',
+	nextTitle: 'Sekanti (klavišas dešinėn)',
+	moveTitle: 'Patraukti',
+	fullExpandText: 'Pilnas dydis',
+	number: 'Paveikslėlis %1 iš %2',
+	restoreTitle: 'Sputelkite ir uždarysite paveikslėlį. Spustelkite neatleisdami ir galėsite keisti paveikslėlio pozicija svetainėje. Naudokite rodykles, norėdami pažiūrėti buvusią arba sekančią.'
+};

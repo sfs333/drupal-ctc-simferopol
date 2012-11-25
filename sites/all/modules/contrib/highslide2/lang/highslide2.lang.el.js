@@ -1,0 +1,26 @@
+﻿// Greek language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Άνοιγμα...',
+	loadingTitle: 'Κλικ για ακύρωση',
+	focusTitle: 'Κλικ για μεταφορά εμπρός',
+	fullExpandTitle: 'Επέκταση σε πραγματικό μέγεθος (f)',
+	creditsText: 'Powered by <i>Highslide JS</i>',
+	creditsTitle: 'Άνοιγμα ιστοσελίδας Highslide JS',
+	previousText: 'Προηγούμενο',
+	nextText: 'Επόμενο',
+	moveText: 'Μετακίνηση',
+	closeText: 'Κλείσιμο',
+	closeTitle: 'Κλείσιμο (esc)',
+	resizeTitle: 'Αλλαγή μεγέθους',
+	playText: 'Έναρξη',
+	playTitle: 'Έναρξη εναλλαγής διαφανειών (spacebar)',
+	pauseText: 'Παύση',
+	pauseTitle: 'Παύση εναλλαγής διαφανειών (spacebar)',
+	previousTitle: ' Προηγούμενο (αριστερό βέλος)',
+	nextTitle: 'Επόμενο (δεξί βέλος)',
+	moveTitle: 'Μετακίνηση',
+	fullExpandText: 'Πραγματικό μεγεθος',
+	number: 'Εικόνα %1 από %2',
+	restoreTitle: 'Κλικ για κλείσιμο εικόνας, κλικ και σύρσιμο για μετακίνηση. Χρησιμοποιήστε τα πλήκτρα κατεύθυνσης (βελάκια) για επόμενο ή προηγούμενο.'
+};

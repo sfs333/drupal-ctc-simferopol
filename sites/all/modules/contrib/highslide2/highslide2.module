@@ -1,0 +1,773 @@
+<?php
+
+/**
+ * @file
+ * Adds Highslide JS Support.
+ *
+ * This module is for Drupal 7.x only.
+ *
+ * Module by: jpnova based op highslide module by Sprocket
+ *
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function highslide2_help($path, $arg) {
+  switch ($path) {
+    case 'admin/modules#description':
+      return t('Enables Highslide for Drupal');
+    case 'admin/help#highslide2':
+      // Return a line-break version of the module README.txt
+      return _filter_autop(file_get_contents( dirname(__FILE__) . "/README.txt"));
+  }
+}
+
+/**
+ * Implementation of hook_enable().
+ */
+function highslide2_enable() {
+  if (!_highslide2_js_path()) {
+    $path = drupal_get_path('module', 'highslide2') .'/highslide';
+    drupal_set_message(t('You must download the highslide JS and copy it to !path.', array('!path' => $path)), 'warning');
+  }
+}
+
+/**
+ * Implementation of hook_requirements().
+ */
+function highslide2_requirements($phase) {
+  $requirements = array();
+
+  // Check to see if Highslide JS is installed.
+  if ($phase == 'runtime') {
+    $path = _highslide2_js_path();
+    $severity = $path ? REQUIREMENT_OK : REQUIREMENT_ERROR;
+
+    $requirements['highslide_js'] = array(
+      'title'    => t('Highslide JS'),
+      'value'    => $path ? $path : t('Not found'),
+      'severity' => $severity,
+    );
+
+    if ($severity != REQUIREMENT_OK) {
+      $requirements['highslide_js']['description'] = t('The Highslide JS file was not found.  Please review the INSTALL.txt file included with the Highslide module for installation instructions.');
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Helper function to get the path for the Highslide JS file.
+ *
+ * @return
+ *  the path to the file, or FALSE if no file is found.
+ */
+function _highslide2_js_path() {
+  $path = drupal_get_path('module', 'highslide2') .'/highslide';
+  // An array of possible highslide files, in order of preference.
+  $files = array(
+    'highslide-full.min.js',
+    'highslide-full.js',
+    'highslide-full.packed.js',
+    'highslide-with-gallery.min.js',
+    'highslide-with-gallery.js',
+    'highslide-with-gallery.packed.js',
+    'highslide-with-html.min.js',
+    'highslide-with-html.js',
+    'highslide-with-html.packed.js',
+    'highslide.js',
+    'highslide.min.js',
+    'highslide.packed.js',
+  );
+
+  foreach($files as $file) {
+    if (file_exists("$path/$file")) {
+      return "$path/$file";
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function highslide2_menu() {
+  $items = array();
+
+  $items['admin/config/media/highslide'] = array(
+    'title'            => 'Highslide',
+    'description'      => 'Allows the user to configure the highslide settings',
+    'file'             => 'highslide2.admin.inc',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('highslide2_options_form'),
+    'access arguments' => array('administer highslide'),
+  );
+
+  $items['admin/config/media/highslide/settings'] = array(
+    'title'  => 'Settings',
+    'type'   => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/config/media/highslide/formatters'] = array(
+    'title'            => 'Image integration',
+    'description'      => 'Integrate Highslide with image by adding new display formats.',
+    'file'             => 'highslide2.admin.inc',
+    'page callback'    => 'highslide2_formatter_list',
+    'access arguments' => array('administer highslide'),
+    'type'             => MENU_LOCAL_TASK,
+  );
+  
+  $items['admin/config/media/highslide/formatters/list'] = array(
+    'title'  => 'List',
+    'type'   => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/config/media/highslide/formatters/add'] = array(
+    'title' => 'Add new formatter',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('highslide2_formatter_form'),
+    'file'             => 'highslide2.admin.inc',
+    'access arguments' => array('administer highslide'),
+    'type'             => MENU_LOCAL_TASK,
+  );
+
+  $items['admin/config/media/highslide/formatters/%highslide2_formatter/edit'] = array(
+    'title' => 'Edit formatter',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('highslide2_formatter_form', 'edit', 5),
+    'file'             => 'highslide2.admin.inc',
+    'access arguments' => array('administer highslide'),
+    'type'             => MENU_CALLBACK | MENU_VISIBLE_IN_BREADCRUMB,
+  );
+
+  $items['admin/config/media/highslide/formatters/%highslide2_formatter/delete'] = array(
+    'title' => 'Delete formatter',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('highslide2_formatter_delete_form', 5),
+    'file'             => 'highslide2.admin.inc',
+    'access arguments' => array('administer highslide'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Menu wildcard loader
+ */
+function highslide2_formatter_load($name) {
+
+  $formatters = highslide2_formatters();
+  // Protect against path manipulation
+  return isset($formatters[$name]) ? $formatters[$name] : array();
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function highslide2_theme() {
+  $theme = array(
+    // highslide image formatter theme functions.
+    'highslide2' => array(
+      'variables' => array(
+        'itemid' => NULL,
+        'item' => NULL,
+        'image_style' => 'thumbnail',
+        'image_link' => '',
+        'heading' => '',
+        'caption' => '',
+      ),
+    ),
+  );
+  return $theme;
+}
+
+/**
+ * Implementation of hook_init()
+ */
+function highslide2_init() {
+  drupal_add_library('highslide2', 'highslide2');
+}
+
+/**
+ * Implements hook_library().
+ */
+function highslide2_library() {
+  $highslide_location = drupal_get_path('module', 'highslide2');
+
+  // The settings are divided in two parts:
+  //  option: wich are the global settings for higslide
+  //  formater: they hold specific layout information that can be used to 
+  //      display the images 
+  //  We load always the default formatter (the specific formatter wil be loaded
+  //      in the theme_highslide2 function
+  $options = variable_get('highslide2_options', _highslide2_default_options());
+  $highslide_language = $options['language'];
+
+  $formatters = highslide2_formatters();
+  $formatter = $formatters['default'];
+
+  $libraries['highslide2'] = array(
+    'title' => 'highslide2',
+    'website' => 'http://www.highslide.com/',
+    'version' => '4.1.12',
+    'js' => array(
+      _highslide2_js_path() => array(),
+      $highslide_location .'/highslide2.param.js' => array(),
+      array(
+        'type' => 'setting',
+        'data' => array('highslide2' => array('options' => $options,),),
+      ),
+      array(
+        'type' => 'setting',
+        'data' => array('highslide2' => array('options' => $formatter,),),
+      ),
+      $highslide_location .'/lang/highslide2.lang.' . _highslide2_match_language() . '.js' => array(),
+    ),
+    'css' => array(
+      $highslide_location .'/highslide/highslide.css' => array(
+        'type'  => 'file',
+        'media' => 'all',
+        'group' => CSS_THEME,
+      ),
+      $highslide_location .'/highslide/highslide-ie6.css' => array(
+        'type'     => 'file',
+        'media'    => 'all',
+        'browsers' => array('IE' => 'lt IE 7', '!IE' => FALSE),
+        'group'    => CSS_THEME,
+      ),
+      $highslide_location .'/highslide.custom.css' => array(
+        'type'  => 'file',
+        'media' => 'all',
+        'group' => CSS_THEME,
+      ),
+    ),
+  );
+
+  if (!empty($options['custom'])) {
+    if (!empty($options['custom']['CSS'])) {
+      $libraries['highslide2']['css'] += array (
+        $options['custom']['CSS'] => array(
+          'type'  => 'inline',
+          'media' => 'all',
+          'group' => CSS_THEME,
+        ),
+      );
+    }
+    if (!empty($options['custom']['JS'])) {
+      $libraries['highslide2']['js'] += array (
+        'jQuery(document).ready(function () {' . $options['custom']['JS'] . '});' => array(
+          'type' => 'inline',
+        ),
+      );
+    }
+  }
+
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function highslide2_field_formatter_info() {
+  $formatters = array(
+    'highslide2' => array(
+      'label'       => t('highslide2'),
+      'field types' => array('image'),
+      'settings'    => array(
+        'formatter'   => '',
+        'image_style' => '',
+        'image_link'  => '',
+        'heading'     => '',
+        'caption'     => '',
+      ),
+    ),
+  );
+  return $formatters;
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function highslide2_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element['formatter'] = array(
+    '#title'         => t('Formatter style'),
+    '#type'          => 'select',
+    '#default_value' => $settings['formatter'],
+    '#options'       => _higslide2_enum_formatters_name(),
+  );
+
+  $image_styles = image_style_options(FALSE);
+  $element['image_style'] = array(
+    '#title'         => t('Image style'),
+    '#type'          => 'select',
+    '#default_value' => $settings['image_style'],
+    '#empty_option'  => t('None (original image)'),
+    '#options'       => $image_styles,
+  );
+
+  $element['image_link'] = array(
+    '#title'         => t('Link image to'),
+    '#type'          => 'select',
+    '#default_value' => $settings['image_link'],
+    '#empty_option'  => t('None (original image)'),
+    '#options'       => $image_styles,
+  );
+
+  $element['heading'] = array(
+    '#title'         => t('heading'),
+    '#type'          => 'select',
+    '#default_value' => $settings['heading'],
+    '#options'       => _highslide2_enum_sourceText('formatter'),
+  );
+
+
+    $element['caption'] = array(
+    '#title'         => t('caption'),
+    '#type'          => 'select',
+    '#default_value' => $settings['caption'],
+    '#options'       => _highslide2_enum_sourceText('formatter'),
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function highslide2_field_formatter_settings_summary($field, $instance, $view_mode) {
+
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = array();
+
+  $formatter_names = _higslide2_enum_formatters_name();
+  $summary[] = t('Formatter style: @formatter', array('@formatter' => $settings['formatter']));
+
+  $image_styles = image_style_options(FALSE);
+
+  // Unset possible 'No defined styles' option.
+  unset($image_styles['']);
+  // Styles could be lost because of enabled/disabled modules that defines
+  // their styles in code.
+  if (isset($image_styles[$settings['image_style']])) {
+    $summary[] = t('Image style: @style', array('@style' => $image_styles[$settings['image_style']]));
+  }
+  else {
+    $summary[] = t('Original image');
+  }
+
+  if (isset($image_styles[$settings['image_link']])) {
+    $summary[] = t('Linked to: @style', array('@style' => $image_styles[$settings['image_link']]));
+  }
+  else {
+    $summary[] = t('Linked to: Original image');
+  }
+
+  $source_text = _highslide2_enum_sourceText('formatter');
+  if (isset($source_text[$settings['heading']])) {
+    $summary[] = t('with @title as heading', array('@title' => $source_text[$settings['heading']]));
+  }
+
+  if (isset($source_text[$settings['caption']])) {
+    $summary[] = t('with @title as caption', array('@title' => $source_text[$settings['caption']]));
+  }
+  return implode('<br />', $summary);
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function highslide2_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+
+  $element = array();
+
+  $formatters = highslide2_formatters();
+  $options = $formatters[$display['settings']['formatter']];
+  $source_text = _highslide2_enum_sourceText('formatter');
+
+  foreach ($items as $delta => $item) {
+    switch ($display['settings']['heading']) {
+      case 'this.thumb.alt':
+      case 'this.thumb.title':
+        //Highslide js do the job
+        $options['heading']['sourceText'] = $display['settings']['heading'];
+        $heading = '';
+        break;
+      case 'node':
+        //needs to wrap this in a class
+        $options['heading']['sourceText'] = '';
+        $heading = $entity->title;
+        break;
+      default:
+        $options['heading']['sourceText'] = '';
+        $heading = '';
+        break;
+    }
+
+    switch ($display['settings']['caption']) {
+      case 'this.thumb.alt':
+      case 'this.thumb.title':
+        //Highslide js do the job
+        $options['caption']['sourceText'] = $display['settings']['caption'];
+        $caption = '';
+        break;
+      case 'node':
+        //needs to wrap this in a class
+        $options['caption']['sourceText'] = '';
+        $caption = $entity->title;
+        break;
+      default:
+        $options['caption']['sourceText'] = '';
+        $caption = '';
+        break;
+    }
+
+    $element[$delta] = array(
+      '#theme'       => 'highslide2',
+      '#itemid'      => $delta,
+      '#item'        => $item,
+      '#image_style' => $display['settings']['image_style'],
+      '#image_link'  => $display['settings']['image_link'],
+      '#heading'     => $heading,
+      '#caption'     => $caption,
+    );
+  }
+
+  drupal_add_js( array('highslide2' => array('options' => $options,),),'setting');
+  return $element;
+}
+
+/**
+ * highslide2 default settings array
+ */
+function _highslide2_default_options() {
+
+  return array(
+    'graphicsDir'             => base_path() . drupal_get_path('module', 'highslide2') . '/highslide/graphics/',
+    'autoEnableAllImages'     => FALSE,
+    'enableAllImages'         => array (
+      'heading'                  => 'this.thumb.title',
+      'caption'                  => 'this.thumb.alt',
+    ),
+    'language'                => 'en',
+    'align'                   => 'center',
+    'allowMultipleInstances'  => FALSE,
+    'outlineType'             => 'drop-shadow',
+    'showCredits'             => FALSE,
+    'credits'                 => array (
+      'creditsText'             => '',
+      'creditsHref'             => '',
+      'creditsTitle'            => '',
+      'creditsPosition'         => 'bottom right',
+      'creditsTarget'           => '_self',
+    ),
+    'activateSlideshow'       => FALSE,
+    'customizeHighslide'      => FALSE,
+    'custom'                  => array (
+      'JS'                      => '',
+      'CSS'                     => '',
+    ),
+  );
+}
+
+/**
+ * highslide2 default formater array
+ */
+function _highslide2_default_formater() {
+
+  return array(
+    'name'                => '',
+    'numberPosition'      => 'none',
+    'showCaption'         => FALSE,
+    'caption'             => array (
+        'relativeTo'        => 'image',
+        'positionImage'     => 'below',
+        'positionViewport'  => 'below',
+    ),
+    'showDimming'          => TRUE,
+    'dimming'              => array (
+      'dimmingOpacity'      => .5,
+      'dimmingDuration'     => 150,
+    ),
+    'showHeading'         => FALSE,
+    'heading'             => array (
+        'relativeTo'        => 'image',
+        'positionImage'     => 'above',
+        'positionViewport'  => 'above',
+    ),
+    'activateSlideshow'   => TRUE,
+    'slideshow'           => array (
+      'repeat'              => FALSE,
+      'interval'            => 5000,
+      'autoPlay'            => FALSE,
+      'useControls'         => TRUE,
+      'fixedControls'       => FALSE,
+      'controls'            => array (
+        'controlsClass'       => ' ',
+        'relativeTo'          => 'viewport',
+        'positionImage'       => 'bottom center',
+        'positionViewport'    => 'bottom center',
+        'hideOnMouseOut'      => TRUE,
+      ),
+      'showThumbstrip'      => FALSE,
+      'thumbstrip'          => array (
+        'mode'                => 'vertical',
+        'relativeTo'          => 'viewport',
+        'positionImage'       => 'top center',
+        'positionViewport'    => 'top center',
+        ),
+    ),
+  );
+}
+
+/**
+ * Renders the image field with highslide
+ */
+function theme_highslide2($variables) {
+
+  $item = $variables['item'];
+  $image = array(
+    'path'  => $item['uri'],
+    'alt'   => $item['alt'],
+    'title' => $item['title'],
+  );
+
+  $image_style = $variables['image_style'];
+  if ($image_style) {
+    $image['style_name'] = $image_style;
+    $output = theme('image_style', $image);
+  }
+  else {
+    $output = theme('image', $image);
+  }
+
+  $linked_style = $variables['image_link'];
+  if ($linked_style) {
+    $path = image_style_path($linked_style, $item['uri']);
+    if (!file_exists($path)) {
+      $path = image_style_url($linked_style, $item['uri']);
+    }
+  }
+  else {
+    $path = $item['uri'];
+  }
+
+  // Add the Highslide class.
+  $link_attributes['class'] = empty($link_attributes['class']) ? 'highslide' : $link_attributes['class'] .' highslide';
+
+  $options = array(
+    'attributes' => $link_attributes,
+    'html' => TRUE,
+  );
+
+  $output = l($output, file_create_url($path), $options);
+
+  if (!empty($variables['caption'])) {
+     $output .= '<span class="highslide-caption">' . $variables['caption'] . '</span>';
+  }
+
+  if (!empty($variables['heading'])) {
+     $output .= '<span class="highslide-heading">' . $variables['heading'] . '</span>';
+  }
+
+  return $output;
+}
+
+ /** 
+ * Returns all formatters, or formatter of name $name if set.
+ * 
+ * @param $name 
+ * Name of the formatter to be retrieved. 
+ * @return 
+ * An array containing the formatters if name is not set or
+ *  an array containing the formatter specified by $name.  
+ */
+function highslide2_formatters($name = null) {
+  $formatters = variable_get('highslide2_formatters', _highslide2_default_formater());
+  if (empty($name)) {
+    return $formatters;
+  } 
+  else {
+    return isset($formatters[$name]) ? $formatters($name) : _highslide2_default_formater();
+  }
+}
+
+/**
+ * Return all the languages available in the highslide scripts
+ * @todo needs optimisation to avoid scanning the directory each time.
+ * @return 
+ * An array containing the languages available in the highslide scripts
+*/
+ function _highslide2_get_languages_available() {
+  require_once DRUPAL_ROOT . '/includes/iso.inc';
+  $locales = _locale_get_predefined_list();
+
+  $languages_available = array ();
+
+  $scan_file = file_scan_directory(drupal_get_path('module', 'highslide2') .'/lang', '#^highslide2\.lang\.*#', array('recurse' => TRUE, 'key' => 'name'));
+  foreach ($scan_file as $item) {
+    $lang_code = substr($item -> name, 16, strlen($item -> name) - 3);
+    $languages_available[$lang_code] = t($locales[$lang_code][0]);
+  }
+
+  return $languages_available;
+}
+
+/**
+* Return the language used for the highslide system message
+*
+* Try to match the language used with the language available for highslide, 
+*   otherwise return the language selected in the setings (and if not yet set,
+*   return the default language from the settings)
+*@return
+*The language string to be used.
+*/
+ function _highslide2_match_language() {
+  // can we match the language for highslide with the site?
+  global $language;
+  $languages_available = _highslide2_get_languages_available();
+  if (!empty($languages_available[$language->language])) {
+    return $language->language;
+  }
+  else {
+    $options = variable_get('highslide2_options', _highslide2_default_options());
+    return $options['language'];
+  }
+}
+
+/**
+*Returns the language used for the highslide system message
+*
+*Try to match the language used with the language available for highslide, 
+*  otherwise return the language selected in the setings (and if not yet set,
+*  return the default language from the settings)
+*@return
+*The language string to be used.
+*/
+function _highslide2_enum_thumbstrip_mode() {
+  return array (
+    'horizontal'   => t('horizontal'),
+    'vertical'     => t('vertical'),
+    'float'       => t('float'),
+  );
+}
+
+/**
+ *Returns a array containing the formatter names.
+ *
+ */
+function _higslide2_enum_formatters_name() {
+  $names = array();
+  foreach (highslide2_formatters() as $formatter) {
+    $names[$formatter['name']] = $formatter['name'];
+  }
+  return $names;
+}
+
+/**
+* Lists the possible positions for an visual element
+*  (credits, controls, thumbstrip, heading, ...)
+*
+*/
+function _highslide2_enum_position($target) {
+  $result = array (
+    'top left'      => t('top left'),
+    'top center'    => t('top center'),
+    'top right'     => t('top right'),
+    'middle left'   => t('middle left'),
+    'middle center' => t('middle center'),
+    'middle right'  => t('middle right'),
+    'bottom left'   => t('bottom left'),
+    'bottom center' => t('bottom center'),
+    'bottom right'  => t('bottom right'),
+  );
+
+  // some positions are only valid relative to an image
+  if ($target == 'image') {
+    $result += array (
+      'above'      => t('above'),
+      'leftpanel'  => t('left  side of the panel'),
+      'rightpanel' => t('right side of the panel'),
+      'below'      => t('below'),
+    );
+  }
+  asort($result);
+  return $result;
+}
+
+/**
+*Returns the list of reference element for the position
+*
+*/
+function _highslide2_enum_relativeTo() {
+  return array (
+    'image'    => t('image'),
+    'viewport' => t('viewport'),
+  );
+}
+
+/*
+*Returns the style of the controls
+*/
+function _highslide2_enum_slideshow_controls() {
+  return array (
+    ' '                   => t('Large white buttons'),
+    'controls-in-heading' => t('Small white buttons'),
+    'large-dark'          => t('Large dark buttons'),
+    'text-controls'       => t('White buttons with text'),
+  );
+}
+
+/*
+*Returns the source of the text displayed in the header of in the caption
+*/
+function _highslide2_enum_sourceText($target) {
+  $result = array (
+    'this.a.title'     => t('Anchor\'s tite'),
+    'this.thumb.alt'   => t('Thumbnail\'s alt'),
+    'this.thumb.title' => t('Thumbnail\'s title'),
+  );
+
+  //For the option "Enable for all image links", the source text cannot be 
+  // the node title (because we don't have access to the node info).
+  if ($target != 'global') {
+    $result['node'] = t('node title');
+  }
+  return $result;
+}
+
+/*
+*Returns the place to display the slide number
+*/
+function _highslide2_enum_numberPosition() {
+  return array (
+    'none'    => t('Do not display'),
+    'heading' => t('heading'),
+    'caption' => t('caption'),
+  );
+}
+
+/*
+*Returns the kind of outlines available in highslide
+*/
+function _highslide2_enum_outlineType() {
+  return array(
+    'null'          => t('None'),
+    'beveled'       => t('Beveled'),
+    'drop-shadow'   => t('Drop Shadow'),
+    'glossy-dark'   => t('Glossy Dark'),
+    'outer-glow'    => t('Outer Glow'),
+    'rounded-white' => t('Rounded White'),
+    'rounded-black' => t('Rounded Black'),
+  );
+}

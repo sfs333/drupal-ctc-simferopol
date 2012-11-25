@@ -1,0 +1,26 @@
+﻿// Arabic language strings
+hs.lang = {
+	cssDirection: 'rtl',
+	loadingText: 'جاري التحميل ...',
+	loadingTitle: 'إضغط للإلغاء',
+	focusTitle: 'أضغط لعرضها فى المقدمة',
+	fullExpandTitle: 'عرض فى الحجم الاصلي (f)',
+	creditsText: 'Powered by <i>Highslide JS</i>',
+	creditsTitle: 'Go to the Highslide JS homepage',
+	previousText: 'السابق',
+	nextText: 'التالي',
+	moveText: 'تحريك',
+	closeText: 'إغلاق',
+	closeTitle: 'إغلاق (esc)',
+	resizeTitle: 'تصغير',
+	playText: 'تشغيل',
+	playTitle: 'تشغيل العرض التلقائي (استخدم مسطرة المسافة)',
+	pauseText: 'إيقاف مؤقت',
+	pauseTitle: 'إيقاف مؤقت للعرض التلقائي (spacebar)',
+	previousTitle: 'السابق (السهم الايسر)',
+	nextTitle: 'التالي (السهم الايمن)',
+	moveTitle: 'تحريك',
+	fullExpandText: 'الحجم الاصلي',
+	number: 'الصورة رقم %1 منf %2',
+	restoreTitle: 'إضغط لإغلاق الصورة, الضغط مع السحب لتحريك الصورة. إستخدم الاتجاهات لعرض الصور.'
+};

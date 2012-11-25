@@ -1,0 +1,26 @@
+﻿// Norwegian (nynorsk) language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Lastar...',
+	loadingTitle: 'Klikk for å avbryte',
+	focusTitle: 'Klikk for å flytte fram',
+	fullExpandTitle: 'Utvid til full storleik',
+	creditsText: 'Drive av <i>Highslide JS</i>',
+	creditsTitle: 'Gå til Highslide JS si heimeside',
+	previousText: 'Forrige',
+	nextText: 'Neste',
+	moveText: 'Flytt',
+	closeText: 'Lukk',
+	closeTitle: 'Lukk (esc)',
+	resizeTitle: 'Endre storleik',
+	playText: 'Spel av',
+	playTitle: 'Vis biletserie (mellomrom)',
+	pauseText: 'Pause',
+	pauseTitle: 'Pause (mellomrom)',
+	previousTitle: 'Forrige (pil venstre)',
+	nextTitle: 'Neste (pil høgre)',
+	moveTitle: 'Flytt',
+	fullExpandText: 'Full storleik',
+	number: 'Bilete %1 av %2',
+	restoreTitle: 'Klikk for å lukke biletet, klikk og dra for å flytte. Bruk piltastane for forrige og neste.'
+};

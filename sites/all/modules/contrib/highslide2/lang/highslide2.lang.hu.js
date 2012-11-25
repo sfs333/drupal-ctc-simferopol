@@ -1,0 +1,26 @@
+﻿// Hungarian language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Kép betöltése...',
+	loadingTitle: 'Mégsem',
+	focusTitle: 'Előrehozás',
+	fullExpandTitle: 'Eredeti méret (f)',
+	creditsText: 'Készítette: Highslide JS',
+	creditsTitle: 'A Highslide JS honlapjának megnyitása',
+	previousText: 'Előző',
+	nextText: 'Következő',
+	moveText: 'Mozgat',
+	closeText: 'Bezárás',
+	closeTitle: 'Bezárás (esc)',
+	resizeTitle: 'Átméretez',
+	playText: 'Indítás',
+	playTitle: 'Diavetítés indítása (szóköz)',
+	pauseText: 'Szünet',
+	pauseTitle: 'Diavetítés szüneteltetése (szóköz)',
+	previousTitle: 'Előző (bal nyíl)',
+	nextTitle: 'Következő (jobb nyíl)',
+	moveTitle: 'Áthelyez',
+	fullExpandText: 'Teljes méret',
+	number: '%1/%2',
+	restoreTitle: 'Klikk ide: bezárás, klikk + nyomva tart: áthelyezés. Bal / jobb nyíl: előző / következő kép'
+};

@@ -1,0 +1,26 @@
+﻿// Swedish language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Laddar...',
+	loadingTitle: 'Klicka för att avbryta',
+	focusTitle: 'Klicka för att visa överst',
+	fullExpandTitle: 'Förstora till full storlek',
+	creditsText: 'Skapat med <i>Highslide JS</i>',
+	creditsTitle: 'Gå till Highslide JS hemsida',
+	previousText: 'Förra',
+	nextText: 'Nästa',
+	moveText: 'Flytta',
+	closeText: 'Stäng',
+	closeTitle: 'Stäng (esc)',
+	resizeTitle: 'Ändra storlek',
+	playText: 'Spela',
+	playTitle: 'Spela bildspel (mellanslag)',
+	pauseText: 'Pausa',
+	pauseTitle: 'Pausa bildspel (mellanslag)',
+	previousTitle: 'Förra (vänster piltangent)',
+	nextTitle: 'Nästa (höger piltangent)',
+	moveTitle: 'Flytta',
+	fullExpandText: 'Full storlek',
+	number: 'ภาพที่ %1 จากทั้งหมด %2 ภาพ',
+	restoreTitle: 'Klicka för att stänga bild, klicka och dra för att flytta. Använd piltangenter för nästa och förra.'
+};

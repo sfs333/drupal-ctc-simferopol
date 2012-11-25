@@ -1,0 +1,26 @@
+﻿// Slovenian language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Nalaganje...',
+	loadingTitle: 'Kliknite za preklic',
+	focusTitle: 'Kliknite, da postavite v ospredje',
+	fullExpandTitle: 'Pokažite v dejanski velikosti (f)',
+	creditsText: 'S pomočjo <i>Highslide JS</i>',
+	creditsTitle: 'Pojdi na Highslide JS domačo stran',
+	previousText: 'Nazaj',
+	nextText: 'Naprej',
+	moveText: 'Premakni',
+	closeText: 'Zapri',
+	closeTitle: 'Zapri (esc)',
+	resizeTitle: 'Spremeni velikost',
+	playText: 'Predvajaj',
+	playTitle: 'Predvajaj slike (spacebar)',
+	pauseText: 'Premor',
+	pauseTitle: 'Premor diapozitivov (spacebar)',
+	previousTitle: 'Nazaj (puščica levo)',
+	nextTitle: 'Naprej (puščica desno)',
+	moveTitle: 'Premakni',
+	fullExpandText: 'V polni velikosti',
+	number: 'Slika %1 od %2',
+	restoreTitle: 'Kliknite, da zaprete sliko, kliknite in povlecite za premik slike. Uporabite smerne puščice za premik med slikami.'
+};

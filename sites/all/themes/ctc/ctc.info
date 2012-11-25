@@ -1,0 +1,13 @@
+name = CTC theme
+description = Personal theme development for CTC project
+package = Core
+version = 1.0
+core = 7.x
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/highslide.css
+scripts[] = js/base.js
+scripts[] = js/highslide.js
+
+
+regions[content] = Content
+regions[slide_top] = Slide Top

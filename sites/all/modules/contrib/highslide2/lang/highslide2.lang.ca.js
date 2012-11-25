@@ -1,0 +1,26 @@
+﻿// Catalan language strings
+hs.lang = {
+	cssDirection: 'ltr',
+	loadingText: 'Carregant...',
+	loadingTitle: 'Clica per cancel•lar',
+	focusTitle: 'Clica per dur-ho al davant',
+	fullExpandTitle: 'Expandir a la mida actual',
+	creditsText: 'Amb el motor de <i>Highslide JS</i>',
+	creditsTitle: 'Anar a la Home de Highslide JS',
+	previousText: 'Anterior',
+	nextText: 'Següent',
+	moveText: 'Moure',
+	closeText: 'Tanca',
+	closeTitle: 'Tanca (esc)',
+	resizeTitle: 'Redimensionar',
+	playText: 'Iniciar',
+	playTitle: 'Iniciar slideshow (barra espaiadora)',
+	pauseText: 'Pausar',
+	pauseTitle: 'Pausar slideshow (barra espaiadora)',
+	previousTitle: 'Anterior (fletxa esquerra)',
+	nextTitle: 'Següent (fletxa dreta)',
+	moveTitle: 'Moure',
+	fullExpandText: 'Mida real',
+	number: 'Изображение %1 от %2',
+	restoreTitle: 'Clica per tancar la imatge, clica i arrossega per moure-la. Usa les fletxes del teclat per avançar o retrocedir.'
+};
