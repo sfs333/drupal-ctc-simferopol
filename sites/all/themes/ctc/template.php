@@ -101,5 +101,14 @@
  *   http://drupal.org/node/223440 and http://drupal.org/node/1089656
  */
 
+
+?>
+<?php
+
+function ctc_preprocess_page(&$vars) {
+    $vars['tell_company'] = variable_get('tell_company');
+    $vars['address_company'] = variable_get('address_company');
+}
+
 ?>
 

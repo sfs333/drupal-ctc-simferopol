@@ -69,6 +69,10 @@
  * @see template_process()
  */
 ?>
+<?php if(drupal_is_front_page()): ?>
+  <?php drupal_add_js(drupal_get_path('theme', 'ctc') . '/js/tonningimage.js');?>
+<?php endif; ?>
+
 <div id="site">
     <div id="hader">
         <!--        <a id="logo" href="http://ctc" title="Домой">-->
@@ -105,16 +109,23 @@
     </div>
 
    <?php print $messages; ?>
-   <?php //dsm($page); ?>
+<!--   --><?php //dsm($test11); ?>
    <?php if ($page['slide_top']): ?>
     <div id="">
 	   <?php print render($page['slide_top']); ?>
     </div>
    <?php endif; ?>
 
-   <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-   <?php print $title; ?>
+  <?php if ($breadcrumb): ?>
+    <div id="breadcrumb">
+        <?php print $breadcrumb; ?>
+    </div>
+  <?php endif; ?>
 
+   <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+  <?php if (!drupal_is_front_page()): ?>
+      <?php print $title; ?>
+  <?php endif; ?>
    <?php if ($page['content']): ?>
     <div id="content">
 	   <?php print render($page['content']); ?>
@@ -124,7 +135,14 @@
     <div id="bottom">
         <div class="headBottom">
         </div>
-        <div class="tel">Телефон для справок 0 (800) 50 60 780</div>
+        <div class="tel">Телефоны для справок:
+            <?php if (!empty($tell_company)): ?>
+            <?php foreach($tell_company as $tell): ?>
+              <div class="item-tell"><?php print $tell['value']; ?></div>
+            <?php endforeach; ?>
+            <?php endif; ?>
+<!--            print $tell['value'];-->
+        </div>
     </div>
 </div>
 

@@ -7,10 +7,10 @@
 <?php //endforeach; ?>
 
 <?php else: ?>
-
+<?php drupal_add_js(drupal_get_path('theme', 'ctc') . '/js/highslide.js');?>
 <script type="text/javascript">
-    hs.graphicsDir = Drupal.settings.basePath + 'sites/all/themes/ctc/images/graphics/';
     hs.align = 'center';
+    hs.graphicsDir = Drupal.settings.basePath + 'sites/all/themes/ctc/images/graphics/';
     hs.transitions = ['expand', 'fade'];
     hs.fadeInOut = true;
     hs.dimmingOpacity = 0.8;
@@ -46,7 +46,7 @@
 
 <?php endforeach; ?>
 
-<?php print $title; ?>
+<?php //print $title; ?>
 <?php print render($content['field_album_photo']); ?>
 <?php print render($content['body']); ?>
 

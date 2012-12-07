@@ -1,0 +1,73 @@
+﻿<?php
+
+function ctc_menu_alter(&$items) {
+  $items['contact']['page callback'] = 'ctc_contact_page';
+}
+
+function ctc_user_presave($account, $user) {
+  $main_user = 8; //user for getting info tell and address.
+
+  if ($user->uid == $main_user) {
+    if (!empty($account['field_tell'])) {
+      variable_set('tell_company', $account['field_tell']['und']);
+    }
+
+    if (!empty($account['field_fax_company'])) {
+      variable_set('fax_company', $account['field_fax_company']['und']);
+    }
+
+    if (!empty($account['field_address_company'])) {
+      $address_company = $account['field_address_company']['und'][0]['value'];
+      variable_set('address_company', $address_company);
+      $url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' . str_replace(' ', '+', $address_company) . '&sensor=false';
+
+      if ($response = json_decode(file_get_contents($url))) {
+        if ($response->status == 'OK' && !empty($response->results)) {
+          variable_set('company_location', $response->results[0]->geometry->location);
+        } else {
+          drupal_set_message(t('Geo coordinates are not obtained for @address!', array('@address' => $url)), 'error');
+        }
+      }
+    }
+  }
+}
+
+function ctc_contact_page($form_constructor) {
+
+  $company_location = variable_get('company_location');
+  $path = drupal_get_path('module', 'ctc');
+  $site_slogan = variable_get('site_slogan');
+  $site_name = variable_get('site_name');
+  $vars = array(
+    'address_company' => variable_get('address_company'),
+    'tell_company' => variable_get('tell_company'),
+    'fax_company' => variable_get('fax_company'),
+    'site_mail' => variable_get('site_mail'),
+    'site_slogan' =>  $site_slogan,
+    'site_name' => $site_name,
+  );
+
+  $popup_vars = array(
+      'vars' => $vars,
+      'logo' => array(
+        '#theme' => 'image',
+        '#path' => $path . '/images/minilogo.png',
+        '#attributes' => array('class' => array('map-contact-popup-logo')),
+      ),
+  );
+
+  drupal_add_js(array('ctc' => array(
+    'company_location' => array(
+      'lat' => $company_location->lat,
+      'lng' => $company_location->lng,
+    ),
+    'company_pop_up_map' => theme_render_template($path . '/pop_up.tpl.php', $popup_vars),
+    'site_slogan' =>  $site_slogan,
+    'site_name' => $site_name,
+  )), 'setting');
+
+
+  $vars['form'] = drupal_get_form($form_constructor);
+  return theme_render_template($path . '/page-contact.tpl.php', $vars);
+
+}

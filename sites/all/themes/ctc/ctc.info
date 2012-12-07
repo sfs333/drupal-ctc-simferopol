@@ -6,7 +6,8 @@ core = 7.x
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/highslide.css
 scripts[] = js/base.js
-scripts[] = js/highslide.js
+;scripts[] = js/highslide.js
+;scripts[] = js/tonningimage.js
 
 
 regions[content] = Content

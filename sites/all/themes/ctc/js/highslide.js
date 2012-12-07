@@ -34,7 +34,7 @@ if (!hs) { var hs = {
         restoreTitle : 'Click to close image, click and drag to move. Use arrow keys for next and previous.'
     },
 // See http://highslide.com/ref for examples of settings
-    graphicsDir : 'highslide/graphics/',
+    graphicsDir : 'sites/all/themes/ctc/images/graphics/',
     expandCursor : 'zoomin.cur', // null disables
     restoreCursor : 'zoomout.cur', // null disables
     expandDuration : 250, // milliseconds
@@ -53,7 +53,7 @@ if (!hs) { var hs = {
     fullExpandPosition : 'bottom right',
     fullExpandOpacity : 1,
     showCredits : true, // you can set this to false if you want
-    creditsHref : 'http://highslide.com/',
+    creditsHref : '',
     creditsTarget : '_self',
     enableKeyListener : true,
     openerTagNames : ['a', 'area'], // Add more to allow slideshow indexing
@@ -233,6 +233,7 @@ if (!hs) { var hs = {
         if (attribs) hs.extend(el, attribs);
         if (nopad) hs.setStyles(el, {padding: 0, border: 'none', margin: 0});
         if (styles) hs.setStyles(el, styles);
+        if (parent) parent.appendChild(el);
         if (parent) parent.appendChild(el);
         return el;
     },
@@ -872,6 +873,7 @@ if (!hs) { var hs = {
             hs.preloadFullImage(0);
 
         // preload cursor
+
         if (hs.restoreCursor) var cur = hs.createElement('img', { src: hs.graphicsDir + hs.restoreCursor });
     },
 

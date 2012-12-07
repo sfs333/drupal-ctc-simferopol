@@ -1,0 +1,12 @@
+name = Excel reader
+description = Adding fild for exel files
+dependencies[] = file
+package = Fields
+core = 7.x
+
+;configure = admin/config/user-interface/menu_icons
+
+files[] = excel_reader.install
+files[] = excel_reader.module
+;files[] = menu_icons_css_item.tpl.php
+

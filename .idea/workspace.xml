@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf2c0f6-57b0-41df-ba49-84fa8b8fa8f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ctc-drupal.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sass_stdlib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/ctc.info" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/js/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/system/page.tpl.php" afterPath="$PROJECT_DIR$/modules/system/page.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/stark/layout.css" afterPath="$PROJECT_DIR$/themes/stark/layout.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/modules/custom/ctc/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/modules/custom/ctc/page-contact.tpl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/templates/views/albums_group/views-view--albums-group--page.tpl.php" />
+      <change type="DELETED" beforePath="Z:\xampp\htdocs\ctc.ua\CTC\.idea\CTC.iml" afterPath="" />
+      <change type="DELETED" beforePath="Z:\xampp\htdocs\ctc.ua\CTC\.idea\libraries\sass_stdlib.xml" afterPath="" />
+      <change type="DELETED" beforePath="Z:\xampp\htdocs\ctc.ua\CTC\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="Z:\xampp\htdocs\ctc.ua\CTC\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="Z:\xampp\htdocs\ctc.ua\sites\all\themes\ctc\templates\taxonomy-term--album_group.tpl.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/contrib/menu_icons/menu_icons.module" afterPath="$PROJECT_DIR$/sites/all/modules/contrib/menu_icons/menu_icons.module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/css/highslide.css" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/css/highslide.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/ctc.info" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/ctc.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/js/base.js" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/js/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/js/highslide.js" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/js/highslide.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/template.php" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/ctc/templates/page.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/ctc/templates/page.tpl.php" />
     </list>
     <ignored path="ctc-drupal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,40 +39,62 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ctc.info" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/ctc.info">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="25" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="highslide.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/highslide.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="838" column="58" selection-start="19804" selection-end="19804" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="17" selection-start="2840" selection-end="2840" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="template.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="3" selection-start="5303" selection-end="5303" vertical-scroll-proportion="-19.423077">
+            <state line="109" column="63" selection-start="5476" selection-end="5476" vertical-scroll-proportion="-5.8846154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctc.module" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/ctc.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="42" selection-start="1314" selection-end="1346" vertical-scroll-proportion="1.6153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-contact.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/page-contact.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="41" selection-start="613" selection-end="613" vertical-scroll-proportion="-8.5">
               <folding>
-                <element signature="e#6#5303#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#strong#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#strong#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#strong#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#strong#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="11" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pop_up.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/pop_up.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="44" selection-start="108" selection-end="108" vertical-scroll-proportion="-1.3076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/js/base.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="0" selection-start="1593" selection-end="1604" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,11 +102,8 @@
       <file leaf-file-name="page.tpl.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/page.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="11" selection-start="4390" selection-end="4390" vertical-scroll-proportion="-8.846154">
+            <state line="141" column="32" selection-start="5294" selection-end="5442" vertical-scroll-proportion="-8.333333">
               <folding>
-                <element signature="e#6#3305#0" expanded="true" />
-                <marker date="1353854618078" expanded="true" signature="3364:3513" placeholder="..." />
-                <marker date="1353854618078" expanded="true" signature="3366:3513" placeholder="..." />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -87,10 +111,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.tpl.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/node.tpl.php">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="459" column="4" selection-start="8356" selection-end="8356" vertical-scroll-proportion="-23.52">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node--photo_albums.tpl.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="8" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.740458">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views-view--portfolio--page.tpl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/views/portfolio/views-view--portfolio--page.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="26" selection-start="2081" selection-end="2081" vertical-scroll-proportion="-9.666667">
               <folding />
             </state>
           </provider>
@@ -109,22 +151,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/theme-settings.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/ctc.info" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/css/highslide.css" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/views/portfolio/views-view-field--portfolio--page--field-album-photo.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/ctc/js/highslide.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/js/base.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/css/style.css" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/node--big_slider_photo.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/page--new--view.tpl.php" />
-        <option value="$PROJECT_DIR$/modules/system/page.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/taxonomy-term--album_group.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/node.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/template.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/ctc.info" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/views/albums_group/views-view--albums-group--page.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/page.tpl.php" />
-        <option value="$PROJECT_DIR$/themes/bartik/templates/node.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/node.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/excel_reader/excel_reader.module" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/js/base.js" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/template.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/ctc/lib/geocoder.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/ctc/pop_up.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/css/style.css" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/ctc/ctc.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/ctc/map.js" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/ctc/page-contact.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/views/portfolio/views-view--portfolio--page.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php" />
       </list>
     </option>
   </component>
@@ -161,6 +203,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,7 +218,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -185,7 +228,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -199,7 +242,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -221,7 +264,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -247,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,7 +320,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="albums_group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -307,7 +426,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -337,7 +456,89 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="excel_reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -349,21 +550,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc-drupal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ctc.ua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\xampp\htdocs\ctc.ua\sites\all\modules\custom\ctc" />
+      <recent name="Z:\xampp\htdocs\ctc.ua\sites\all\themes\ctc\templates\views\albums_group" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\xampp\htdocs\ctc.ua\sites\all\modules\custom\ctc" />
+      <recent name="Z:\xampp\htdocs\ctc.ua" />
       <recent name="C:\WebServers\home\ctc-drupal\sites\all\themes\ctc" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.page-contact.tpl.php">
+    <configuration default="false" name="contrib" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/sites/all/modules/contrib" />
+      <method />
+    </configuration>
+    <configuration default="false" name="page-contact.tpl.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/sites/all/modules/custom/ctc/page-contact.tpl.php">
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -371,11 +617,21 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <list size="0" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.contrib" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.page-contact.tpl.php" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.page-contact.tpl.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.contrib" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="8cf2c0f6-57b0-41df-ba49-84fa8b8fa8f1" name="Default" comment="" />
       <created>1353795763615</created>
       <updated>1353795763615</updated>
     </task>
@@ -387,10 +643,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967825" sideWeight="0.9848485" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22908624" sideWeight="0.9848485" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -399,9 +654,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -457,119 +713,109 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/stark/stark.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/seven/seven.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="288" selection-end="316" vertical-scroll-proportion="0.2425107">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/bartik.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/block/block.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="212" selection-end="232" vertical-scroll-proportion="0.12125535">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/js/highslide.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3302" column="0" selection-start="129811" selection-end="129811" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="58" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="17" selection-start="2840" selection-end="2840" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/highslide.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="838" column="58" selection-start="19804" selection-end="19804" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/ctc.info">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+        <state line="8" column="1" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/garland/node.tpl.php">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/views/albums_group/views-view--albums-group--page.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="27" column="79" selection-start="959" selection-end="959" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contact/contact.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="18" selection-start="5389" selection-end="5402" vertical-scroll-proportion="-18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/excel_reader/excel_reader.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="1" selection-start="3681" selection-end="3681" vertical-scroll-proportion="-20.615385">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="3" selection-start="5303" selection-end="5303" vertical-scroll-proportion="-19.423077">
-          <folding>
-            <element signature="e#6#5303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/system/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="96" selection-start="5790" selection-end="5878" vertical-scroll-proportion="0.26435044">
+        <state line="109" column="63" selection-start="5476" selection-end="5476" vertical-scroll-proportion="-5.8846154">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/bartik/templates/node.tpl.php">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="11" selection-start="0" selection-end="5404" vertical-scroll-proportion="0.9496296">
-          <folding>
-            <element signature="e#7#4068#0" expanded="true" />
-          </folding>
+        <state line="459" column="4" selection-start="8356" selection-end="8356" vertical-scroll-proportion="-23.52">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/page.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="11" selection-start="4390" selection-end="4390" vertical-scroll-proportion="-8.846154">
+        <state line="141" column="32" selection-start="5294" selection-end="5442" vertical-scroll-proportion="-8.333333">
           <folding>
-            <element signature="e#6#3305#0" expanded="true" />
-            <marker date="1353854618078" expanded="true" signature="3364:3513" placeholder="..." />
-            <marker date="1353854618078" expanded="true" signature="3366:3513" placeholder="..." />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/node.tpl.php">
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/ctc.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="37" column="42" selection-start="1314" selection-end="1346" vertical-scroll-proportion="1.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/pop_up.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="108" selection-end="108" vertical-scroll-proportion="-1.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="11" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1593" selection-end="1604" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/ctc/page-contact.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="41" selection-start="613" selection-end="613" vertical-scroll-proportion="-8.5">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#strong#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#strong#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#strong#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#strong#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/views/portfolio/views-view--portfolio--page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="26" selection-start="2081" selection-end="2081" vertical-scroll-proportion="-9.666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/ctc/templates/node--photo_albums.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="8" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.740458">
           <folding />
         </state>
       </provider>

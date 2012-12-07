@@ -1,0 +1,9 @@
+name = CTC Sustem settings
+description = Fitchures for CTC personal site
+
+package = CTC
+core = 7.x
+
+files[] = ctc.install
+files[] = ctc.module
+

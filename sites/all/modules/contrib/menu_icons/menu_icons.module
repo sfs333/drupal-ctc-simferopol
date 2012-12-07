@@ -27,6 +27,7 @@ function menu_icons_menu() {
  * @param $theme_registry
  */
 function menu_icons_theme_registry_alter(&$theme_registry) {
+
   // Override the link theming functions to hide titles if so configured.
   if (variable_get('menu_icons_hide_titles', FALSE)) {
     if (!empty($theme_registry['menu_link'])) {
@@ -288,6 +289,7 @@ function menu_icons_css_generate() {
     if (isset($options['menu_icon']) && $options['menu_icon']['enable'] && !empty($options['menu_icon']['path']) && file_exists($options['menu_icon']['path'])) {
 
       $image_path = $options['menu_icon']['path'];
+
       $image_style = (isset($options['menu_icon']['image_style']) && !empty($options['menu_icon']['image_style'])) ? $options['menu_icon']['image_style'] : NULL;
 
       if ($image_style) {
@@ -301,7 +303,9 @@ function menu_icons_css_generate() {
 
       // Retrieve the image dimensions
       $info = image_get_info($image_path);
-      $image_url = file_create_url($image_path);
+
+      //$image_url = file_create_url($image_path);
+      $image_url = '../' . file_uri_target($image_path);
 
       // Support private filesystem
       $css .= theme('menu_icons_css_item', array('mlid' => $item->mlid, 'path' => $image_url, 'size' => $info['width'], 'pos' => $pos));
@@ -310,7 +314,7 @@ function menu_icons_css_generate() {
   if (!empty($css)) {
     $csspath = 'public://css';
     file_prepare_directory($csspath, FILE_CREATE_DIRECTORY);
-    file_unmanaged_save_data($css, $csspath . '/menu_icons.css', FILE_EXISTS_REPLACE);	
+    file_unmanaged_save_data($css, $csspath . '/menu_icons.css', FILE_EXISTS_REPLACE);
   }
 }
 
@@ -349,6 +353,7 @@ function menu_icons_directory_path($full = TRUE) {
  *
  * @return string
  */
+
 function menu_icon_menu_link($variables) {
   $element = $variables['element'];
   $sub_menu = '';

@@ -1,4 +1,34 @@
+
+
+var toningImages = false;
 (function($) {
+
+    toningImages = function(images, hoverObj, callback) {
+        callback = callback || function() {};
+        if ($.browser.msie) {
+            callback();
+            return;
+        }
+
+        var loads = 0
+        var lengImg = images.length;
+
+        images.load(function(){
+            $(this).jToningImage({
+                color: "grey"
+            });
+
+            loads++;
+            if (loads >= lengImg) callback();
+        });
+
+        hoverObj.hover(function(){
+                $(this).find('.toiningImgNew').fadeOut(200);
+            },
+            function(){
+                $(this).find('.toiningImgNew').fadeIn(200);
+            });
+    }
 
     $(document).ready(function() {
 
@@ -17,6 +47,12 @@
                }
            }
        })
+
+        toningImages($(".categor img"), $(".categor"), function() {
+            //$("#block-menu-menu-front-page-menu").css({'background':'none'}).find(".categor").fadeIn(700);
+        });
+
+
     })
 
 }) (jQuery)
